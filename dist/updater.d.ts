@@ -1,5 +1,5 @@
 import React from 'react';
-import type { UniswapInterfaceMulticall } from './abi/types';
+import type { SurgeInterfaceMulticall } from './abi/types';
 import type { MulticallContext } from './context';
 import type { MulticallState, ListenerOptions } from './types';
 /**
@@ -25,7 +25,7 @@ export interface UpdaterProps {
     context: MulticallContext;
     chainId: number | undefined;
     latestBlockNumber: number | undefined;
-    contract: UniswapInterfaceMulticall;
+    contract: SurgeInterfaceMulticall;
     isDebug?: boolean;
     listenerOptions?: ListenerOptions;
 }

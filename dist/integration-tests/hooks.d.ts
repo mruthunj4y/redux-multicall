@@ -1,7 +1,7 @@
 import { JsonRpcProvider } from '@ethersproject/providers';
-import { UniswapInterfaceMulticall } from '../src/abi/types';
+import { SurgeInterfaceMulticall } from '../src/abi/types';
 import { ChainId } from './consts';
-export declare function useContract(chainId: ChainId): UniswapInterfaceMulticall;
+export declare function useContract(chainId: ChainId): SurgeInterfaceMulticall;
 export declare function useLatestBlock(provider: JsonRpcProvider): number | undefined;
 export declare function useCurrentBlockTimestamp(chainId: ChainId, blockNumber: number | undefined): string | undefined;
 export declare function useCurrentBlockTimestampMultichain(chainIds: ChainId[], blockNumbers: Array<number | undefined>): Array<string | undefined>;
