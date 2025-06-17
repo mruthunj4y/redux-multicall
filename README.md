@@ -21,21 +21,21 @@ export const rootReducer = combineReducers({
 })
 ```
 
-To use the updater, you'll need an instance of the Uniswap Multicall2 contract:
+To use the updater, you'll need an instance of the surge Multicall2 contract:
 
 ```js
-import { abi as MulticallABI } from '@surge/v3-periphery/artifacts/contracts/lens/UniswapInterfaceMulticall.sol/UniswapInterfaceMulticall.json'
+import { abi as MulticallABI } from '@surge/v3-periphery/artifacts/contracts/lens/InterfaceMulticall.sol/InterfaceMulticall.json'
 import { Contract } from '@ethersproject/contracts'
-import { UniswapInterfaceMulticall } from './abi/types'
+import { InterfaceMulticall } from './abi/types'
 
-const multicall2Contract = new Contract(address, MulticallABI, provider) as UniswapInterfaceMulticall
+const multicall2Contract = new Contract(address, MulticallABI, provider) as InterfaceMulticall
 ```
 
 For a more detailed example, see basic example app in `./integration-tests`
 
 ## Alpha software
 
-The latest version of the SDK is used in production in the Uniswap Interface,
+The latest version of the SDK is used in production in the surge Interface,
 but it is considered Alpha software and may contain bugs or change significantly between patch versions.
 If you have questions about how to use the SDK, please reach out in the `#dev-chat` channel of the Discord.
 Pull requests welcome!

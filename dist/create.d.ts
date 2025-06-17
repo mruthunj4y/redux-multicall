@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface MulticallOptions {
     reducerPath?: string;
 }
@@ -29,7 +30,7 @@ export declare function createMulticall(options?: MulticallOptions): {
             payload: import("./types").MulticallListenerOptionsPayload;
             type: string;
         }) => void;
-    }>;
+    }, string>;
     hooks: {
         useMultipleContractSingleData: (chainId: number | undefined, latestBlockNumber: number | undefined, addresses: (string | undefined)[], contractInterface: import("@ethersproject/abi").Interface, methodName: string, callInputs?: (string | number | import("ethers").BigNumber | import("./validation").MethodArg[] | undefined)[] | undefined, options?: Partial<import("./types").ListenerOptionsWithGas> | undefined) => import("./types").CallState[];
         useSingleContractMultipleData: (chainId: number | undefined, latestBlockNumber: number | undefined, contract: import("ethers").Contract | null | undefined, methodName: string, callInputs: ((string | number | import("ethers").BigNumber | import("./validation").MethodArg[] | undefined)[] | undefined)[], options?: Partial<import("./types").ListenerOptionsWithGas> | undefined) => import("./types").CallState[];
@@ -38,5 +39,5 @@ export declare function createMulticall(options?: MulticallOptions): {
         useMultiChainMultiContractSingleData: (chainToBlockNumber: Record<number, number | undefined>, chainToAddresses: Record<number, (string | undefined)[]>, contractInterface: import("@ethersproject/abi").Interface, methodName: string, callInputs?: (string | number | import("ethers").BigNumber | import("./validation").MethodArg[] | undefined)[] | undefined, options?: Partial<import("./types").ListenerOptionsWithGas> | undefined) => Record<number, import("./types").CallState[]>;
         useMultiChainSingleContractSingleData: (chainToBlockNumber: Record<number, number | undefined>, chainToAddress: Record<number, string | undefined>, contractInterface: import("@ethersproject/abi").Interface, methodName: string, callInputs?: (string | number | import("ethers").BigNumber | import("./validation").MethodArg[] | undefined)[] | undefined, options?: Partial<import("./types").ListenerOptionsWithGas> | undefined) => Record<number, import("./types").CallState>;
     };
-    Updater: (props: Pick<import("./updater").UpdaterProps, "listenerOptions" | "chainId" | "latestBlockNumber" | "contract" | "isDebug">) => JSX.Element;
+    Updater: (props: Pick<import("./updater").UpdaterProps, "listenerOptions" | "chainId" | "latestBlockNumber" | "contract" | "isDebug">) => import("react").JSX.Element;
 };

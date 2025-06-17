@@ -1,1 +1,2 @@
-export declare function App(): JSX.Element;
+import React from 'react';
+export declare function App(): React.JSX.Element;

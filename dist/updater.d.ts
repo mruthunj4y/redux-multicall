@@ -1,3 +1,4 @@
+import React from 'react';
 import type { UniswapInterfaceMulticall } from './abi/types';
 import type { MulticallContext } from './context';
 import type { MulticallState, ListenerOptions } from './types';
@@ -28,4 +29,4 @@ export interface UpdaterProps {
     isDebug?: boolean;
     listenerOptions?: ListenerOptions;
 }
-export declare function createUpdater(context: MulticallContext): (props: Omit<UpdaterProps, 'context'>) => JSX.Element;
+export declare function createUpdater(context: MulticallContext): (props: Omit<UpdaterProps, 'context'>) => React.JSX.Element;

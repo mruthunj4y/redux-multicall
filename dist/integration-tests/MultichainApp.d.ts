@@ -1,1 +1,2 @@
-export declare function MultichainApp(): JSX.Element;
+import React from 'react';
+export declare function MultichainApp(): React.JSX.Element;

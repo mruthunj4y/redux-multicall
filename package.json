@@ -7,7 +7,7 @@
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/Uniswap/redux-multicall",
+  "repository": "https://github.com/mruthunj4y/redux-multicall",
   "keywords": [
     "surge",
     "xrplevm"
@@ -18,7 +18,7 @@
     "access": "public"
   },
   "scripts": {
-    "contracts:compile": "typechain --target ethers-v5 --out-dir src/abi/types './node_modules/@uniswap/v3-periphery/artifacts/contracts/**/*Multicall*.json'",
+    "contracts:compile": "typechain --target ethers-v5 --out-dir src/abi/types './node_modules/@surge/v3-periphery/artifacts/contracts/**/*Multicall*.json'",
     "lint": "tsdx lint .",
     "test": "tsdx test src",
     "test:e2e": "tsdx test integration-tests",
@@ -41,7 +41,7 @@
     "@types/jest": "^25.2.1",
     "@types/react": "^17.0.28",
     "@types/react-dom": "^17.0.14",
-    "@uniswap/v3-periphery": "^1.3.0",
+    "@surge/v3-periphery": "https://github.com/mruthunj4y/v3-periphery.git#main",
     "dotenv": "^16.0.3",
     "eslint-plugin-prettier": "3.4.1",
     "ethers": "^5.4.7",
