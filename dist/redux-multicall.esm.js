@@ -978,9 +978,8 @@ function _fetchChunk() {
     return _regenerator().w(function (_context) {
       while (1) switch (_context.n) {
         case 0:
-          console.debug('Fetching chunk', chunk, blockNumber);
-          _context.p = 1;
-          _context.n = 2;
+          _context.p = 0;
+          _context.n = 1;
           return multicall.callStatic.multicall(chunk.map(function (obj) {
             var _obj$gasRequired;
             return {
@@ -993,7 +992,7 @@ function _fetchChunk() {
           {
             blockTag: blockNumber
           });
-        case 2:
+        case 1:
           _yield$multicall$call = _context.v;
           returnData = _yield$multicall$call.returnData;
           if (isDebug) {
@@ -1009,42 +1008,42 @@ function _fetchChunk() {
             });
           }
           return _context.a(2, returnData);
-        case 3:
-          _context.p = 3;
+        case 2:
+          _context.p = 2;
           _t = _context.v;
           error = _t;
           if (!(error.code === -32000 || ((_error$message = error.message) == null ? void 0 : _error$message.indexOf('header not found')) !== -1)) {
-            _context.n = 4;
+            _context.n = 3;
             break;
           }
           throw new RetryableError("header not found for block number " + blockNumber);
-        case 4:
+        case 3:
           if (!(error.code === -32603 || ((_error$message2 = error.message) == null ? void 0 : _error$message2.indexOf('execution ran out of gas')) !== -1)) {
-            _context.n = 6;
+            _context.n = 5;
             break;
           }
           if (!(chunk.length > 1)) {
-            _context.n = 6;
+            _context.n = 5;
             break;
           }
           if (process.env.NODE_ENV === 'development') {
             console.debug('Splitting a chunk in 2', chunk);
           }
           half = Math.floor(chunk.length / 2);
-          _context.n = 5;
+          _context.n = 4;
           return Promise.all([fetchChunk(multicall, chunk.slice(0, half), blockNumber), fetchChunk(multicall, chunk.slice(half, chunk.length), blockNumber)]);
-        case 5:
+        case 4:
           _yield$Promise$all = _context.v;
           c0 = _yield$Promise$all[0];
           c1 = _yield$Promise$all[1];
           return _context.a(2, c0.concat(c1));
-        case 6:
+        case 5:
           console.error('Failed to fetch chunk', error);
           throw error;
-        case 7:
+        case 6:
           return _context.a(2);
       }
-    }, _callee, null, [[1, 3]]);
+    }, _callee, null, [[0, 2]]);
   }));
   return _fetchChunk.apply(this, arguments);
 }
